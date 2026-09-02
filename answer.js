@@ -4,10 +4,11 @@ function describeValue(value) {
   const truthiness = value ? "truthy" : "falsy";
   return `${type} | ${truthiness}`;
 }
- //Question No. 2
+
+//Question No. 2
 function getDayType(day) {
   const lowerDay = day.toLowerCase();
- 
+
   switch (lowerDay) {
     case "friday":
     case "saturday":
@@ -28,49 +29,49 @@ function validateUsername(username) {
   if (username.length < 4) {
     return "Too Short";
   }
- 
+
   if (username.includes(" ")) {
     return "No Space Allowed";
   }
- 
+
   if (username.toLowerCase().includes("admin")) {
     return "Reserved Word";
   }
- 
+
   return "Available";
 }
 
- //Question No. 4
+//Question No. 4
 function getCngFare(distance, isNight = false, waitingMinutes = 0) {
   let fare = 50;
- 
+
   if (distance > 2) {
     fare += (distance - 2) * 15;
   }
- 
+
   fare += waitingMinutes * 2;
- 
+
   if (isNight) {
     fare = fare * 1.2;
   }
- 
+
   return fare;
 }
- 
+
 //Question No. 5
 const getChaseVerdict = (target, scored, ballsLeft) => {
   const runsNeeded = target - scored;
- 
+
   if (runsNeeded <= 0) {
     return "Won";
   }
- 
+
   if (ballsLeft <= 0) {
     return "Lost";
   }
- 
+
   const requiredRate = (runsNeeded / ballsLeft) * 6;
- 
+
   let verdict;
   if (requiredRate <= 6) {
     verdict = "Comfortable";
@@ -79,7 +80,6 @@ const getChaseVerdict = (target, scored, ballsLeft) => {
   } else {
     verdict = "Almost Impossible";
   }
- 
+
   return `Need ${runsNeeded} runs in ${ballsLeft} balls | ${verdict}`;
 };
- 
